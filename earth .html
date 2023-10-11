@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Earth Rotation Animation</title>
+    <style>
+        /* CSS for the Earth image */
+        #earth {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            background: url('https://cdn.britannica.com/25/160325-050-EB1C8FB7/image-instruments-Earth-satellite-NASA-Suomi-National-2012.jpg') no-repeat;
+            background-size: 100% 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Earth's Rotation Animation</h1>
+    <div id="earth"></div>
+
+    <script>
+        // JavaScript for the animation
+        let degree = 0;
+        const earth = document.getElementById('earth');
+
+        function rotateEarth() {
+            degree = (degree + 1) % 360;
+            earth.style.transform = `rotate(${degree}deg)`;
+            requestAnimationFrame(rotateEarth);
+        }
+
+        // Start the rotation animation
+        rotateEarth();
+    </script>
+</body>
+</html>
